@@ -30,10 +30,10 @@ public class Voronoi extends ApplicationAdapter {
 	@Override
 	public void create () {
 		sr = new ShapeRenderer();
-		int max = generate.nextInt(20);
+		int max = generate.nextInt(10) + 10; ///Creates an array of a random length between 10 and 20
 		Foci.CreateArray(max);
 		for (int i = 0; i < max-1; i++) {
-			Foci.Generate(i, generate);
+			Foci.Generate(i, generate); ///Generates points up to the number created
 		}
 		
 	}
