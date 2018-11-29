@@ -12,7 +12,8 @@ public class Maths { ///Operations done here are called by the Main Event Queue
 		TotalX = Directrix.GetX() + Foci.GetX(i);
 		dY = Foci.GetY(i) - Directrix.GetY();
 		
-		ParabolaY = (dX*dX) / (2*dY) + (TotalX / 2);
+		ParabolaY = (dX*dX) / (2*dY); // 2*dY = 0 -> dY = 0
+		ParabolaY += (TotalX / 2);
 		return(ParabolaY);
 	}
 	
