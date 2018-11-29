@@ -6,10 +6,12 @@ public class Foci {
 	
 	private int x = 0;
 	private int y = 0;
+	private static int max = 0;
 	private static int[][] Foci;
 	
-	public void CreateArray(int max) { ///Changes the maximum number of Foci to a random number <20 
-		Foci = new int[max][3];
+	public void CreateArray(int i) { ///Changes the maximum number of Foci to a random number <20 
+		max = i;
+		Foci = new int[i][3];
 	}
 	
 	public void Generate(int i, Random generate) { /// Creates all points and puts them in the array
@@ -27,6 +29,10 @@ public class Foci {
 	
 	public int GetY(int i) { ///Returns FociY; used for Parabola drawing; the next DirectrixY; and sorting the array 
 		return (Foci[i][1]);
+	}
+	
+	public int GetMax() {
+		return (max);
 	}
 
 }

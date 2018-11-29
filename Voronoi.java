@@ -24,6 +24,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 public class Voronoi extends ApplicationAdapter {
 	ShapeRenderer sr;
 	Foci Foci = new Foci();
+	Render Render = new Render();
 	Directrix Directrix = new Directrix();
 	private Random generate = new Random();
 	
@@ -40,7 +41,7 @@ public class Voronoi extends ApplicationAdapter {
 
 	@Override
 	public void render() { 
-		
+		Render.Cycle(sr, Foci);
 		
 	}
 	
