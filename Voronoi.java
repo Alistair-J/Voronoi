@@ -40,7 +40,7 @@ public class Voronoi extends ApplicationAdapter {
 	}
 
 	@Override
-	public void render() { 
+	public void render() { ///Renders all shapes using ShapeRenderer
 		Render.Cycle(sr, Foci);
 		
 	}

@@ -31,7 +31,7 @@ public class Foci {
 		return (Foci[i][1]);
 	}
 	
-	public int GetMax() {
+	public int GetMax() { ///Returns the number of points that exist
 		return (max);
 	}
 
