@@ -3,6 +3,7 @@ package com.gdxtemplate.game;
 import java.util.Random;
 
 import com.badlogic.gdx.*;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 /*
@@ -22,11 +23,15 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 
 public class Voronoi extends ApplicationAdapter {
+	/*
+	 Creation of all variables used within the main program
+	 */
 	ShapeRenderer sr;
 	Foci Foci = new Foci();
 	Render Render = new Render();
 	Directrix Directrix = new Directrix();
 	private Random generate = new Random();
+	int usedFoci = 0;
 	
 	@Override
 	public void create () {
@@ -40,9 +45,15 @@ public class Voronoi extends ApplicationAdapter {
 	}
 
 	@Override
-	public void render() { ///Renders all shapes using ShapeRenderer
-		Render.Cycle(sr, Foci);
-		
+	public void render() { ///Main event queue
+		Gdx.gl.glClearColor(0,0,0,0);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		Foci.FociSort();
+		if (usedFoci < Foci.GetMax()) { ///Ensures that the program does not error by preventing range errors
+			Directrix.SetY(Foci.FociSort()[usedFoci][1]);
+		}
+		Render.Cycle(sr, Foci, Directrix);
+		usedFoci++;
 	}
 	
 	

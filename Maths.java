@@ -14,9 +14,6 @@ public class Maths { ///Operations done here are called by the Main Event Queue
 		
 		ParabolaY = (dX*dX) / (2*dY) + (TotalX / 2);
 		return(ParabolaY);
-	} /*References: 
-	https://jacquesh.github.io/post/fortunes-algorithm/
-	https://www.purplemath.com/modules/distform.htm
-	*/
+	}
 	
 }
